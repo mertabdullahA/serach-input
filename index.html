@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input id="searchInput" type="text">
+
+
+    <ul id="mylist">
+        <li>JavaScript</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>Ruby</li>
+        <li>C++</li>
+        <li>React</li>
+    </ul>
+
+
+</body>
+
+</html>
+
+
+
+
+<script>
+    const searchInput = document.getElementById("searchInput");
+    const myList = document.getElementById("myList");
+    const items = document.getElementsByTagName("li");
+    searchInput.addEventListener("keyup", function () {
+
+        const searchText = searchInput.value.toLowerCase();
+
+
+        for (let i = 0; i < items.length; i++) {
+            const itemText = items[i].textContent.toLowerCase();
+
+            // Arama metni liste öğesinin içinde geçiyorsa, öğeyi göster; yoksa gizle
+            if (itemText.includes(searchText)) {
+                items[i].style.display = "";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+
+    })
+
+
+
+</script>
